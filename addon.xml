@@ -2,7 +2,7 @@
 <AddOn id="urn:umlfri.org:plugin:simplejavagen" xmlns="http://umlfri.org/v2/addon.xsd">
     <AddOnInfo>
         <Name name="Simple Java Generator"/>
-        <Version version="0.0.1"/>
+        <Version version="0.0.2"/>
         <Author name="Jan Janech"/>
         <Homepage url="http://umlfri.org"/>
         <CommonLicense name="LGPL-3"/>
