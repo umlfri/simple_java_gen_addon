@@ -4,7 +4,7 @@ from collections import namedtuple
 
 from PyQt5.QtCore import Qt, QRegExp
 from PyQt5.QtGui import QSyntaxHighlighter, QTextCharFormat, QBrush, QColor, QFont
-from PyQt5.QtWidgets import QDialog, QVBoxLayout, QTextEdit, QDialogButtonBox
+from PyQt5.QtWidgets import QDialog, QVBoxLayout, QTextEdit, QDialogButtonBox, QWidget
 
 
 class Highlighter(QSyntaxHighlighter):
@@ -98,9 +98,11 @@ class Highlighter(QSyntaxHighlighter):
             startIndex = self.commentStartExpression.indexIn(text, startIndex + commentLength)
 
 
-class ShowSourceDialog(QDialog):
+class ShowSourceDialog(QWidget):
     def __init__(self):
         super().__init__()
+        
+        self.setAttribute(Qt.WA_DeleteOnClose)
         
         layout = QVBoxLayout()
         
@@ -118,7 +120,7 @@ class ShowSourceDialog(QDialog):
         self.editor.setReadOnly(True)
         
         button_box = QDialogButtonBox(QDialogButtonBox.Ok)
-        button_box.accepted.connect(self.accept)
+        button_box.accepted.connect(lambda: self.close())
         
         layout.addWidget(self.editor)
         layout.addWidget(button_box)

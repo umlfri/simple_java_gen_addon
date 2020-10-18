@@ -1,3 +1,4 @@
+import os
 from collections import namedtuple
 
 from PyQt5.QtWidgets import QMessageBox
@@ -353,4 +354,8 @@ class Exporter:
         dlg = ShowSourceDialog()
         dlg.set_class_name(cls.get_name())
         dlg.set_source(cls.build())
-        dlg.exec()
+        if os.name == 'nt':
+            dlg.showMinimized()
+            dlg.showNormal()
+        else:
+            dlg.show()
