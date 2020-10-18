@@ -337,6 +337,9 @@ class Exporter:
         self.__app = app
     
     def export(self):
+        if self.__app.current_diagram is None:
+            QMessageBox.critical(None, "Java export", "No diagram")
+            return
         selected = [sel for sel in self.__app.current_diagram.selection if isinstance(sel, ElementVisual) and sel.object.type.name == 'class']
         if not selected:
             QMessageBox.critical(None, "Java export", "No class is selected")
