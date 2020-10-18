@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AddOn id="urn:umlfri.org:plugin:simplejavagen" xmlns="http://umlfri.org/v2/addon.xsd">
+    <AddOnInfo>
+        <Name name="Simple Java Generator"/>
+        <Version version="0.0.1"/>
+        <Author name="Jan Janech"/>
+        <Homepage url="http://umlfri.org"/>
+        <CommonLicense name="LGPL-3"/>
+        <Icon path="icons/coffee.png" />
+        <Description>Exports class as Java source code</Description>
+    </AddOnInfo>
+    
+    <Injections path="injections" />
+
+    <Plugin starter="python" path="plugin"/>
+</AddOn>

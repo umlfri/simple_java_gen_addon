@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ToolBar label="JavaGen" xmlns="http://umlfri.org/v2/addon.xsd">
+    <Item action="export" label="Export as java source code" icon="icons/coffee.png"/>
+</ToolBar>
